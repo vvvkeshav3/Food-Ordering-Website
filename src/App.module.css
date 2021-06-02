@@ -1,0 +1,14 @@
+.img{
+    background : url('./assets/images/meals.jpg');
+    background-repeat: no-repeat;
+    width : 100%;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 63%, 59% 83%, 43% 93%, 24% 96%, 15% 95%, 8% 92%, 4% 89%, 0% 84%);
+
+    height : 500px;
+    z-index : -100;
+}
+.main{
+    transform : translateY(-180px);
+}

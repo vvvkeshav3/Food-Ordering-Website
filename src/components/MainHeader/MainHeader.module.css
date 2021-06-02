@@ -1,0 +1,57 @@
+.header {
+  background-color: brown;
+  padding: 1rem;
+  position : fixed;
+  top: 0;
+  left : 0;
+  right :0;
+  z-index : 1000;
+}
+
+.container {
+    display : flex;
+    justify-content: space-between;
+    width : 95%;
+    max-width : 1200px;
+    margin : auto;
+}
+
+.cart-icon{
+    margin-right : .5rem;
+}
+
+.btn{
+    font: inherit;
+    outline : none;
+    color : white;
+    border : none;
+    font-weight : 700;
+    padding : 1em 3em;
+    border-radius : 1em;
+    background-color: rgb(87, 3, 3);
+    cursor : pointer;
+
+}
+
+
+.total-items{
+    content : "2";
+    background-color : brown;
+    color : white;
+    padding : 0.2rem 1rem;
+    font-weight : bold;
+    border-radius : 1em;
+    margin-left : .5em;
+}
+
+.btn:hover{
+    background-color : rgb(51, 10, 10);
+}
+.btn:hover .total-items{
+    background-color: rgb(143, 19, 19);
+}
+
+.title {
+  color: white;
+  margin: 0;
+}

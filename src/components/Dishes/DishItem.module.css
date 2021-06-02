@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin : 0 0.5em 1em 0;
+  padding-bottom: .5em;
+  border-bottom : 1px solid grey;
+}
+
+.container p,
+h3 {
+  margin: 0.3rem 0;
+}
+.dish-price {
+  font-weight: 900;
+  font-size : 1.2rem;
+  color: rgb(231, 81, 35);
+}
+
+.btn {
+  display: block;
+  margin: 1em auto;
+}
+.plus-icon {
+  margin-right: 0.4em;
+}

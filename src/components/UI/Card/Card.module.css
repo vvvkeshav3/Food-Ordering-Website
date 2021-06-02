@@ -1,0 +1,11 @@
+.card{
+    background : white;
+    width : 95%;
+    max-width : 850px;
+    border-radius: 10px;
+    margin : auto;
+    margin-bottom : 0;
+    padding : 1em 2em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}

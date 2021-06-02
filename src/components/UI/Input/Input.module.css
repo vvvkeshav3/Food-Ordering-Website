@@ -1,0 +1,17 @@
+.form-div{
+    display : flex;
+    align-items: center;
+}
+.form-div input{
+    /* box-sizing: border-box; */
+    width : 50px;
+    border-radius : 4px;
+    padding : .5em ;
+    outline : none;
+    border : 1px solid grey;
+    height : 100%;
+}
+.form-div label{
+    margin-right : 1em;
+    font-weight: 700;
+}
