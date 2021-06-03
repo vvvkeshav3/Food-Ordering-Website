@@ -1,0 +1,40 @@
+.card {
+  margin: 3em auto 0 auto;
+}
+.img {
+  background: url('../../assets/images/meals.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  z-index: -2;
+}
+.main {
+  transform: translateY(-90px);
+}
+
+@media (min-width: 768px) {
+  .img {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 63%,
+      59% 83%,
+      43% 93%,
+      24% 96%,
+      15% 95%,
+      8% 92%,
+      4% 89%,
+      0% 84%
+    );
+    height: 500px;
+  }
+  .main {
+    transform: translateY(-180px);
+  }
+  .card {
+    transform: translateY(80px);
+    margin: 0 auto;
+  }
+}

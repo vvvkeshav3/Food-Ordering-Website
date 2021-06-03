@@ -1,6 +1,4 @@
-.card {
-  transform: translateY(80px);
-}
+
 .dishes-ul {
   list-style: none;
   padding: 0;
@@ -11,3 +9,5 @@
   border: none;
   padding-bottom: 0;
 }
+
+

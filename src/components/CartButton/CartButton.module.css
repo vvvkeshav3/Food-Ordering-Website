@@ -1,0 +1,31 @@
+.cart-icon {
+  margin-right: 0.5rem;
+}
+
+.btn {
+  font: inherit;
+  color: white;
+  border: none;
+  font-weight: 700;
+  padding: 1em 3em;
+  border-radius: 1em;
+  background-color: rgb(87, 3, 3);
+  cursor: pointer;
+}
+
+.total-items {
+  content: '2';
+  background-color: brown;
+  color: white;
+  padding: 0.2rem 1rem;
+  font-weight: bold;
+  border-radius: 1em;
+  margin-left: 0.5em;
+}
+
+.btn:hover {
+  background-color: rgb(51, 10, 10);
+}
+.btn:hover .total-items {
+  background-color: rgb(143, 19, 19);
+}

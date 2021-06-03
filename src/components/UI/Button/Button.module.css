@@ -3,15 +3,15 @@
   padding: 0.3rem 1.6rem;
   color: white;
   background-color: brown;
-  outline: none;
-  border: none;
+  /* outline: none; */
+  border: 1px solid brown;
   border-radius: 1em;
-  cursor : pointer;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
-.button:hover,
-.button:active {
-  color: rgb(135, 188, 236);
+.button:hover {
+  background-color: rgb(95, 24, 24);
 }
 
 button:disabled,

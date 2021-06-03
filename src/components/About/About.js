@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './ModalOverlay.module.css';
+import classes from './About.module.css';
 
-const ModalOverlay = (props) => {
+const About = (props) => {
   return (
     <div className={classes.modal}>
       <h2 className={classes.title}>Delicious Food, Delivered To You</h2>
@@ -19,4 +19,4 @@ const ModalOverlay = (props) => {
   );
 };
 
-export default ModalOverlay;
+export default About;
