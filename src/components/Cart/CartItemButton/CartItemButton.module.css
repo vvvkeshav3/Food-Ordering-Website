@@ -4,14 +4,15 @@
   color: brown;
   /* font: inherit; */
   padding: 0.2rem 1rem;
-  margin-left: .6rem;
+  margin-left: 0.6rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  font-weight : 700;
-  font-size : 1.2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.button:hover{
-    background-color: brown;
-    color : white;
+.button:hover {
+  background-color: brown;
+  color: white;
 }

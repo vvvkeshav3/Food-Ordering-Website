@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CartModalOverlay from './CartModalOverlay/CartModalOverlay';
-import Backdrop from '../Backdrop/Backdrop';
+import CartModalOverlay from './CartModalOverlay';
+import Backdrop from '../../UI/Backdrop/Backdrop';
 const CartModal = (props) => {
   return (
     <React.Fragment>
@@ -10,10 +10,7 @@ const CartModal = (props) => {
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
-        <CartModalOverlay
-          onOrder={props.onOrder}
-          onClose={props.onClose}
-        />,
+        <CartModalOverlay onOrder={props.onOrder} onClose={props.onClose} />,
         document.getElementById('overlay-root')
       )}
       ;

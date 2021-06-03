@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding : 1em 0.5em ;
+  padding: 1em 0.5em;
 }
 
 .title {
-  margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
 }
 
 .about {
@@ -26,7 +26,7 @@
 .number {
   border: 1px solid rgb(158, 153, 153);
   text-align: center;
-  padding: 0.1em .5em;
+  padding: 0.1em 0.5em;
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: 5px;

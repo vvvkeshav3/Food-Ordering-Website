@@ -1,0 +1,21 @@
+.modal {
+  overflow: hidden;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(48, 46, 46);
+  width: 75%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 1em auto;
+  /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+}

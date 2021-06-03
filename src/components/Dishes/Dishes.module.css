@@ -1,4 +1,6 @@
-
+.card {
+  margin: 3em auto 0 auto;
+}
 .dishes-ul {
   list-style: none;
   padding: 0;
@@ -10,4 +12,9 @@
   padding-bottom: 0;
 }
 
-
+@media (min-width: 768px) {
+  .card {
+    transform: translateY(80px);
+    margin: 0 auto;
+  }
+}

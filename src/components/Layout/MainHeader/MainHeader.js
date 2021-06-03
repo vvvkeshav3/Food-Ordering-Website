@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './MainHeader.module.css';
-import CartButton from '../CartButton/CartButton';
+import CartButton from './CartButton/CartButton';
 
-const MainHeader = (props) => {
+const MainHeader = () => {
   return (
     <header className={classes.header}>
       <div className={classes.container}>

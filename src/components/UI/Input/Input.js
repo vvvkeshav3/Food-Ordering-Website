@@ -8,8 +8,8 @@ const Input = (props) => {
         type={props.type}
         id={props.id}
         value={props.value}
-        min = {props.min}
-        max = {props.max}
+        min={props.min}
+        max={props.max}
         onChange={props.onChange}
         onBlur={props.onBlur}
       />
