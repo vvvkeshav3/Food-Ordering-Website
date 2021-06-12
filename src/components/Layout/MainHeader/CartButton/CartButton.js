@@ -2,21 +2,26 @@ import React, { useState, useEffect, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import classes from './CartButton.module.css';
-import CartModal from '../../../Cart/CartModal/CartModal';
-import DishContext from '../../../store/dish-context';
+import CartModal from '../../../Cart/CartModal';
+import CartContext from '../../../store/cart-context';
 
 const CartButton = () => {
   const [showCartOverlay, setShowCartOverlay] = useState(false);
   const [isButtonHighlighted, setIsButtonHighlighted] = useState(false);
 
-  const ctx = useContext(DishContext);
+  const {items} = useContext(CartContext);
+  let cartQty = 0;
+  for(let {qty} of items){
+    cartQty+=qty;
+  }
+
   useEffect(() => {
     const body = document.body;
     body.style.overflow = showCartOverlay ? 'hidden' : 'auto';
   }, [showCartOverlay]);
 
   useEffect(() => {
-    if (ctx.cartQty === 0 || showCartOverlay) {
+    if (cartQty === 0 || showCartOverlay) {
       return;
     }
     setIsButtonHighlighted(true);
@@ -27,7 +32,7 @@ const CartButton = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [showCartOverlay, ctx.cartQty]);
+  }, [showCartOverlay, cartQty]);
 
   useEffect(() => {
     setIsButtonHighlighted(false);
@@ -59,7 +64,7 @@ const CartButton = () => {
         onClick={clickHandler}
       >
         {element} Your Cart{' '}
-        <span className={classes['total-items']}>{ctx.cartQty}</span>
+        <span className={classes['total-items']}>{cartQty}</span>
       </button>
     </React.Fragment>
   );

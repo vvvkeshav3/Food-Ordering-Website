@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CartModalOverlay from './CartModalOverlay';
-import Backdrop from '../../UI/Backdrop/Backdrop';
+import Backdrop from '../UI/Backdrop/Backdrop';
 const CartModal = (props) => {
   return (
     <React.Fragment>

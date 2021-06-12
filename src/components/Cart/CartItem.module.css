@@ -33,3 +33,23 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
+
+.button {
+  background-color: white;
+  border: 1px solid brown;
+  color: brown;
+  /* font: inherit; */
+  padding: 0.2rem 1rem;
+  margin-left: 0.6rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: brown;
+  color: white;
+}
+

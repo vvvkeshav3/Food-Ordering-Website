@@ -1,13 +1,13 @@
 import React from 'react';
 import MainHeader from './components/Layout/MainHeader/MainHeader';
 import Main from './components/Layout/Main/Main';
-
+import CartProvider from './components/store/CartProvider';
 function App() {
   return (
-    <React.Fragment>
+    <CartProvider>
       <MainHeader />
       <Main />
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

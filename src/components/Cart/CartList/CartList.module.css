@@ -1,8 +1,0 @@
-.list {
-  list-style: none;
-  padding: 0;
-  max-height: 340px;
-  overflow: scroll;
-  overflow-x: hidden;
-  box-shadow: rgb(236, 110, 110) 0px 0px 1px 0px;
-}

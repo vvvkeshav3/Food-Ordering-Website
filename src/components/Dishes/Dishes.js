@@ -1,15 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Card from '../UI/Card/Card';
 import DishItem from './DishItem';
 import classes from './Dishes.module.css';
-import DishContext from '../store/dish-context';
 
 const Dishes = () => {
-  const cxt = useContext(DishContext);
+
+  const [dishData, setDishData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let {data} = await axios(
+        `https://food-order-backend-default-rtdb.firebaseio.com/meals.json`
+      );
+      let dishes = [];
+      for(let id in data){
+        dishes.push({id: id, ...data[id]})
+      }
+      setDishData(dishes);
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <Card className={classes.card}>
       <ul className={classes['dishes-ul']}>
-        {cxt.dishesData.map((dish) => (
+        {dishData.map((dish) => (
           <DishItem
             title={dish.title}
             subtitle={dish.subtitle}

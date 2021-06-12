@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import classes from './CartModalOverlay.module.css';
-import Card from '../../UI/Card/Card';
-import Button from '../../UI/Button/Button';
-import CartList from '../CartList/CartList';
-import DishContext from '../../store/dish-context';
-
+import Card from '../UI/Card/Card';
+import Button from '../UI/Button/Button';
+import CartContext from '../store/cart-context';
+import CartItem from './CartItem';
 const CartModalOverlay = (props) => {
-  const ctx = useContext(DishContext);
+  const {items,totalAmount} = useContext(CartContext);
   const style = {
     width: '85%',
     maxWidth: '600px',
@@ -14,11 +13,22 @@ const CartModalOverlay = (props) => {
 
   return (
     <Card className={classes.modal} style={style}>
-      <CartList />
+      <ul className={classes.list} id="cartList">
+        {items.map(({ title, price, id, qty,subtitle }) => (
+          <CartItem
+            title={title}
+            price={price}
+            key={id}
+            subtitle ={subtitle}
+            id={id}
+            qty={qty}
+          />
+        ))}
+      </ul>
       <footer className={classes.actions}>
         <div className={classes['total-amount']}>
           <p>Total Amount</p>
-          <p>${+ctx.totalAmt.toFixed(2)}</p>
+          <p>${+totalAmount.toFixed(2)}</p>
         </div>
         <Button className={classes.closeBtn} onClick={props.onClose}>
           Close
@@ -26,7 +36,7 @@ const CartModalOverlay = (props) => {
         <Button
           className={classes.btn}
           onClick={props.onOrder}
-          disabled={!ctx.isOrderPossible}
+          disabled={!items.length>0}
         >
           Order
         </Button>
