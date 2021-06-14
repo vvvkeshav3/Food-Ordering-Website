@@ -20,7 +20,7 @@ const CartItem = ({ title, price, id, subtitle, qty }) => {
   return (
     <li className={classes.item}>
       <div className={classes.info}>
-        <h2 className={classes.title}>{title}</h2>
+        <h3 className={classes.title}>{title}</h3>
         <div className={classes.about}>
           <p className={classes.price}>${price}</p>
           <div className={classes.number}>x {qty}</div>

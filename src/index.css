@@ -29,7 +29,7 @@ body {
 /* ScrollBar */
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 3px;
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
@@ -46,15 +46,15 @@ body {
 
   border-radius: 15px;
 }
-#cartList::-webkit-scrollbar-thumb {
+#changeScrollBar::-webkit-scrollbar-thumb {
   background: #948e8e;
   border-radius: 15px;
 }
 
-#cartList::-webkit-scrollbar-track {
+#changeScrollBar::-webkit-scrollbar-track {
   background: #ffffff;
 }
 
-#cartList::-webkit-scrollbar-thumb:hover {
+#changeScrollBar::-webkit-scrollbar-thumb:hover {
   background: #5d575e;
 }

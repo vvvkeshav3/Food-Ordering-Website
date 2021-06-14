@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  top: 20vh;
+  top: 8vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -16,7 +16,7 @@
 
 .total-amount {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
 }
@@ -25,7 +25,7 @@
   margin: 0 0 1em 0;
 }
 
-.btn {
+.actions .btn {
   margin-left: 1em;
 }
 
@@ -36,7 +36,7 @@
 .list {
   list-style: none;
   padding: 0;
-  max-height: 340px;
+  max-height: 250px;
   overflow: scroll;
   overflow-x: hidden;
   box-shadow: rgb(236, 110, 110) 0px 0px 1px 0px;
@@ -49,6 +49,6 @@
 }
 
 .actions .closeBtn:hover {
-  background-color: brown;
+  background-color: rgb(95, 24, 24);
   color: white;
 }

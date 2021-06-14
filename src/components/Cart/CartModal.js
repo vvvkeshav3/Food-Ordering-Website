@@ -10,7 +10,7 @@ const CartModal = (props) => {
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
-        <CartModalOverlay onOrder={props.onOrder} onClose={props.onClose} />,
+        <CartModalOverlay onClose={props.onClose} />,
         document.getElementById('overlay-root')
       )}
       ;

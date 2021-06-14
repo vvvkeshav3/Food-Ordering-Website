@@ -46,9 +46,9 @@ const CartButton = () => {
     setShowCartOverlay(false);
   };
 
-  const orderHandler = () => {
-    console.log('Ordering.....!!');
-  };
+  // const orderHandler = () => {
+  //   console.log('Ordering.....!!');
+  // };
 
   const element = (
     <FontAwesomeIcon className={classes['cart-icon']} icon={faShoppingCart} />
@@ -57,7 +57,7 @@ const CartButton = () => {
   return (
     <React.Fragment>
       {showCartOverlay && (
-        <CartModal onClose={closeHandler} onOrder={orderHandler} />
+        <CartModal onClose={closeHandler} />
       )}
       <button
         className={`${classes.btn} ${isButtonHighlighted ? classes.bump : ''}`}
