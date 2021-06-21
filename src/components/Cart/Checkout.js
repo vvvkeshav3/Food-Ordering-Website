@@ -3,7 +3,7 @@ import classes from './Checkout.module.css';
 import Button from '../UI/Button/Button';
 
 const isEmpty = (value) => value.trim() === '';
-const isFiveChars = (value) => value.trim().length === 5;
+const isSixChars = (value) => value.trim().length === 6;
 
 const Checkout = (props) => {
   const [formInputValidity, setFormInputValidity] = useState({
@@ -28,7 +28,7 @@ const Checkout = (props) => {
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
-    const enteredPostalIsValid = isFiveChars(enteredPostal);
+    const enteredPostalIsValid = isSixChars(enteredPostal);
 
     setFormInputValidity({
       name: enteredNameIsValid,
@@ -48,6 +48,12 @@ const Checkout = (props) => {
     }
 
     // submit the data
+    props.onConfirm({
+      name : enteredName,
+      street : enteredStreet,
+      city : enteredCity,
+      postal : enteredPostal,
+    })
   };
   const nameControlClasses = `${classes.control} ${
     formInputValidity.name ? '' : classes.invalid

@@ -4,13 +4,44 @@ import Button from '../UI/Button/Button';
 import CartContext from '../store/cart-context';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
+import axios from 'axios';
 const CartModalOverlay = (props) => {
-  const { items, totalAmount } = useContext(CartContext);
+  const { items, totalAmount, clearCart } = useContext(CartContext);
   const [showCheckout, setShowCheckout] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const orderHandler = () => {
     setShowCheckout(true);
   };
+
+  const submitOrderHandler = async (userData) => {
+    setIsSubmitting(true);
+
+    // fetch(
+    //   `https://food-order-backend-default-rtdb.firebaseio.com/orders.json`,
+    //   {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //       user: userData,
+    //       orderedItems: items,
+    //     }),
+    //   }
+    // );
+
+    await axios.post(
+      `https://food-order-backend-default-rtdb.firebaseio.com/orders.json`,
+      {
+        user: userData,
+        orderedItems: items,
+      }
+    );
+
+    setIsSubmitting(false);
+    setDidSubmit(true);
+    clearCart();
+  };
+
   const cartItems = items.map(({ title, price, id, qty, subtitle }) => (
     <CartItem
       title={title}
@@ -37,8 +68,8 @@ const CartModalOverlay = (props) => {
     </div>
   );
 
-  return (
-    <section className={classes.modal}>
+  const cartModalContent = (
+    <React.Fragment>
       <ul className={classes.list} id="changeScrollBar">
         {cartItems}
       </ul>
@@ -47,9 +78,32 @@ const CartModalOverlay = (props) => {
           <p>Total Amount</p>
           <p>${+totalAmount.toFixed(2)}</p>
         </div>
-        {showCheckout && <Checkout onClose ={props.onClose}/>}
+        {showCheckout && (
+          <Checkout onClose={props.onClose} onConfirm={submitOrderHandler} />
+        )}
         {!showCheckout && modalActions}
       </section>
+    </React.Fragment>
+  );
+
+  const isSubmittingModalContent = <p>Sending order Data...</p>;
+
+  const didSubmitModalContent = (
+    <React.Fragment>
+      <p>Successfully sent the order!</p>
+      <div className={classes.actions}>
+        <Button className={classes.closeBtn} onClick={props.onClose}>
+          Close
+        </Button>
+      </div>
+    </React.Fragment>
+  );
+
+  return (
+    <section className={classes.modal}>
+      {!isSubmitting && !didSubmit && cartModalContent}
+      {isSubmitting && isSubmittingModalContent}
+      {!isSubmitting && didSubmit && didSubmitModalContent}
     </section>
   );
 };
